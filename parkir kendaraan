@@ -1,0 +1,103 @@
+#include <stdio.h>
+#include <conio.h>
+#include <string.h>
+#include <iostream>
+
+using namespace std;
+int main(){
+
+        //inputan
+            long int hjam, totalbayar, hlebihjam;
+          
+            char nama[25],kode, lanjut, terakhir[50];
+    //struct 
+    struct{
+    	int lama;
+		int masuk;
+		int keluar;
+	}masuk;
+	struct{
+		int lama;
+		int masuk;
+		int keluar;
+	}keluar;
+    
+    //menu data
+        data:
+        // Ketentuan harga setiap kendaraan perjam
+            cout << endl;
+            cout << "		| WELCOME TO PARKIRAN MODERN |   " << "\n";
+            cout << "-------------------------------------------------------- " << "\n";
+            cout << "|      |           |               |                   |" << "\n";
+            cout << "| Kode | Kendaraan | 1 Jam Pertama | 1 Jam Selanjutnya |" << "\n";
+            cout << "|      |           |               |                   |" << "\n";
+            cout << "|------------------------------------------------------|" << "\n";
+            cout << "|      |           |               |                   |" << "\n";
+            cout << "|   1  | Motor     |  Rp. 2.000;   |    Rp.   500;     |" << "\n";
+            cout << "|      |           |               |                   |" << "\n";
+            cout << "|   2  | Mobil     |  Rp. 3.000;   |    Rp. 1.500;     |" << "\n";
+            cout << "|      |           |               |                   |" << "\n";
+            cout << "|   3  | Truk/Bis  |  Rp. 5.000;   |    Rp. 3.000;     |" << "\n";
+            cout << "|      |           |               |                   |" << "\n";
+            cout << "------------------------------------------------------- " << "\n";
+        // Pengisian data kendaraan yang parkir
+			cout << "Nomer Plat = " ;
+            cin >> nama;
+            cout << "Kode Kendaraan [1,2,3]: ";
+            cin >> kode;
+            cout << "Jam Masuk: ";
+            cin >> masuk.masuk;
+            cout << "Jam Keluar: ";
+            cin >> masuk.keluar;
+        
+
+            //HITUNG
+            if(kode=='1')
+                {
+                    hjam=2000L;
+                    hlebihjam=500L;
+                    cout<< "Jenis kendaraan : " << "Motor";
+                    }
+            else     if(kode=='2')
+                {
+                    hjam=3000L;
+                    hlebihjam=1500L;
+                    cout << "Jenis kendaraan : "<< "Mobil";
+                    }
+            else     if(kode=='3')
+                {
+                    hjam=5000L;
+                    hlebihjam=3000L;
+                    cout << "Jenis kendaraan : " << "Truk/Bus";
+                    }
+            cout << endl;
+			cout << endl;        
+            cout << "selesai" << "\n";
+
+            keluar.lama = masuk.keluar-masuk.masuk;
+            totalbayar = (keluar.lama-1)*hlebihjam+hjam;
+        // Pencetakan hasil hitungan waktu parkir dan harga
+            cout << " ----------------------------------------------- "<< "\n";
+            cout << " Nomer Plat = " << nama << "\n";
+            cout << " ----------------------------------------------- "<< "\n";
+            cout << " Harga 1 jam Pertama = " << hjam << "\n";
+            cout << " Jenis kendaraan = " << kode << "\n";
+            cout << " Durasi parkir = " << keluar.lama << " jam" << "\n";
+            cout << " Total Harga Parkir sebesar = " << totalbayar << "\n";
+            
+    cout << "--------------[THANK YOU]------------------" << "\n";
+            cout << endl;
+        // Menu pilihan untuk mengulang hitungan parkir
+    cout << "Apakah anda ingin mengulang?" "[y/n]" << endl;
+    cin >> lanjut;
+    if (lanjut=='y'|| lanjut=='Y'){
+			
+    	goto data; // Kembali ke menu
+    }else
+        goto selesai; // Selesai
+        
+	getch();
+    selesai:
+    	
+    	return 0;
+}
