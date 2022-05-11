@@ -1,0 +1,16 @@
+// program mwnghitung penjumlahan dan perkalian dua bilangan //
+int main(){
+	
+	int a,b,x,y;
+	cout << "// Program penjumlahan dan perkalian dua bilangan // "<<endl;
+	cout <<endl;
+cout << "=== Penjumlahan ==="<<endl;
+	cout << "Masukkan bilangan pertama : ";
+	cin>>a;
+	cout << "Masukkan bilangan kedua : ";
+	cin>>b;
+	
+cout << "Hasil penjumlahan : "<<(a+b)<<endl;
+cout << "Hasil perkalian : "<<(a*b)<<endl;
+	
+}
